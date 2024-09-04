@@ -7,14 +7,23 @@ class Solution(object):
         if not strs:
             return ""
 
-        first_string = strs[0]
+        prefix = strs[0]
 
-        for i in strs[1:]:
-            while first_string != i[:len(first_string)]:
-                first_string = first_string[:-1]
+        # find the shortest string
+        for i in range(len(strs)):
+            if strs[i] < prefix:
+                prefix = strs[i]
 
-            if not first_string:
-                return ""
 
-        return first_string
+        for j in range(len(strs)):
+            word = strs[j]
+
+            while prefix != word[:len(prefix)]:
+                prefix = prefix[:-1]
+
+                if not prefix:
+                    return ""
+
+
+        return prefix
         
