@@ -9,7 +9,6 @@ class Solution(object):
 
         prefix = strs[0]
 
-        # find the shortest string
         for i in range(len(strs)):
             if strs[i] < prefix:
                 prefix = strs[i]
